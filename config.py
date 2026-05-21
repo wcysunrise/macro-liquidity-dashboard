@@ -92,6 +92,12 @@ SERIES: dict[str, SeriesConfig] = {
         description="ICE BofA US Corporate Index Option-Adjusted Spread",
         kind="rate",
     ),
+    "T10YIE": SeriesConfig(
+        series_id="T10YIE",
+        name="10Y Breakeven Inflation",
+        description="10-Year Breakeven Inflation Rate",
+        kind="rate",
+    ),
 }
 
 

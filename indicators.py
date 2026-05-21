@@ -6,7 +6,7 @@ import pandas as pd
 
 
 def add_derived_indicators(df: pd.DataFrame) -> pd.DataFrame:
-    """计算 Net Liquidity、SOFR-IORB 和 2s10s。"""
+    """计算 Net Liquidity、SOFR-IORB、2s10s 和 10Y Real Yield。"""
 
     result = df.copy()
 
@@ -18,6 +18,9 @@ def add_derived_indicators(df: pd.DataFrame) -> pd.DataFrame:
 
     if {"DGS10", "DGS2"}.issubset(result.columns):
         result["YIELD_2S10S_BPS"] = (result["DGS10"] - result["DGS2"]) * 100
+
+    if {"DGS10", "T10YIE"}.issubset(result.columns):
+        result["REAL_YIELD_10Y"] = result["DGS10"] - result["T10YIE"]
 
     return result
 
