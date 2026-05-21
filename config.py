@@ -102,6 +102,7 @@ SERIES: dict[str, SeriesConfig] = {
 
 
 RISK_ASSETS = {
+    "SPY": "S&P 500 ETF proxy",
     "NVDA": "NVIDIA",
     "AMD": "Advanced Micro Devices",
     "SNDK": "SanDisk",
@@ -116,6 +117,7 @@ RISK_ASSETS = {
 
 RISK_INDICATORS = {
     "^VIX": "VIX",
+    "^VVIX": "VVIX",
     "DX-Y.NYB": "DXY proxy",
 }
 

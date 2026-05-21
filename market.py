@@ -12,7 +12,12 @@ from config import RISK_ASSETS, RISK_INDICATORS
 
 
 def _display_ticker(ticker: str) -> str:
-    return "DXY" if ticker == "DX-Y.NYB" else ticker
+    aliases = {
+        "DX-Y.NYB": "DXY",
+        "^VIX": "VIX",
+        "^VVIX": "VVIX",
+    }
+    return aliases.get(ticker, ticker)
 
 
 def _extract_close(frame: pd.DataFrame, ticker: str) -> pd.DataFrame:
